@@ -28,7 +28,7 @@ public class ReportPrinterService {
 
         System.out.println(modelType + " Yearly Sales Report");
         System.out.println("---------------------------");
-        reportData.forEach(System.out::println);
+        // TODO: print report data (implement function in SalesDataService first)
         System.out.println();
         System.out.println("The best month for " + modelType + " was: " + bestMonth);
         System.out.println("The worst month for " + modelType + " was: " + worstMonth);
