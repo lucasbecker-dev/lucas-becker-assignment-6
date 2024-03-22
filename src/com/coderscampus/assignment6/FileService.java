@@ -18,8 +18,6 @@ public class FileService {
                 String[] splitLine = line.split(",");
                 salesData.add(new SalesData(splitLine[0], splitLine[1]));
             });
-        } catch (FileNotFoundException e) {
-            System.err.println(e.getMessage());
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
