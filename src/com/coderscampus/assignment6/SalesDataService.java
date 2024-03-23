@@ -11,7 +11,7 @@ public class SalesDataService {
     public static YearMonth getDateAsYearMonth(SalesData salesData) {
         String month = salesData.getDate().split("-")[0];
         String year = "20" + salesData.getDate().split("-")[1];
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM", Locale.US);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM", Locale.getDefault());
         return YearMonth.parse(year + "-" + month, formatter);
     }
 
