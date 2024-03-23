@@ -15,16 +15,14 @@ public class Assignment6Application {
         System.out.println(SalesDataService.findSalesDataBestMonth(model3));
         System.out.println(SalesDataService.findSalesDataWorstMonth(model3));
 
-
         Optional<SalesData> model3WorstMonthOpt = modelX.stream().min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
         Optional<SalesData> modelSWorstMonthOpt = modelX.stream().min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
         Optional<SalesData> modelXWorstMonthOpt = modelX.stream().min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
 
-
         Stream<YearMonth> yearMonthModel3 = model3.stream().map(SalesDataService::getDateAsYearMonth);
         Stream<YearMonth> yearMonthModelS = modelS.stream().map(SalesDataService::getDateAsYearMonth);
         Stream<YearMonth> yearMonthModelX = modelX.stream().map(SalesDataService::getDateAsYearMonth);
-//
+
 //        yearMonthModel3.forEach(System.out::println);
 //
 //        System.out.println("Model 3 Yearly Sales Report");

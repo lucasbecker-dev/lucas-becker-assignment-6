@@ -26,12 +26,16 @@ public class SalesDataService {
     }
 
     public static SalesData findSalesDataBestMonth(List<SalesData> salesDataList) {
-        Optional<SalesData> bestMonthOpt = salesDataList.stream().max(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
+        Optional<SalesData> bestMonthOpt = salesDataList
+                .stream()
+                .max(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
         return bestMonthOpt.orElse(null);
     }
 
     public static SalesData findSalesDataWorstMonth(List<SalesData> salesDataList) {
-        Optional<SalesData> worstMonthOpt = salesDataList.stream().min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
+        Optional<SalesData> worstMonthOpt = salesDataList
+                .stream()
+                .min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
         return worstMonthOpt.orElse(null);
     }
 }
