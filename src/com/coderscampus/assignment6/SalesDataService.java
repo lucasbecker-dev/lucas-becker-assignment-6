@@ -38,4 +38,11 @@ public class SalesDataService {
                 .min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
         return worstMonthOpt.orElse(null);
     }
+
+    public static String formatSalesData(List<SalesData> salesDataList) {
+        // TODO: complete this message
+        salesDataList.stream().forEach(data -> {
+            String formattedData;
+        });
+    }
 }
