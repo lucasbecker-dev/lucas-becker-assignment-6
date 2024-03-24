@@ -2,10 +2,8 @@ package com.coderscampus.assignment6;
 
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SalesDataService {
     public static YearMonth getDateAsYearMonth(SalesData salesData) {
@@ -40,10 +38,21 @@ public class SalesDataService {
 
     }
 
-    public static String formatSalesData(List<SalesData> salesDataList) {
-        // TODO: complete this message
-        salesDataList.stream().forEach(data -> {
-            String formattedData;
-        });
+    public static Map<String, String> groupSalesByYear(List<SalesData> salesDataList) {
+        Map<String, String> salesGroupedByYear = new HashMap<>();
+        Set<Integer> years = salesDataList.stream().map(data -> SalesDataService.getDateAsYearMonth(data).getYear()).collect(Collectors.toCollection(LinkedHashSet<Integer>::new));
+
+        for (Integer year : years) {
+            Integer sum = 0;
+            for (SalesData salesData : salesDataList) {
+                Integer currentYear = (Integer) SalesDataService.getDateAsYearMonth(salesData).getYear();
+                if (currentYear.equals(year)) {
+                    sum += SalesDataService.getSalesAsInteger(salesData);
+                }
+            }
+            salesGroupedByYear.put(year.toString(), sum.toString());
+        }
+
+        return salesGroupedByYear;
     }
 }
