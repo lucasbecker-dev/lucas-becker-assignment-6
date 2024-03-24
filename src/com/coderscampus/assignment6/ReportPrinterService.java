@@ -2,6 +2,7 @@ package com.coderscampus.assignment6;
 
 import java.time.YearMonth;
 import java.util.List;
+import java.util.Map;
 
 public class ReportPrinterService {
     public static void printReport (ModelType modelType, List<String> reportData, YearMonth bestMonth, YearMonth worstMonth) {
@@ -33,5 +34,10 @@ public class ReportPrinterService {
         System.out.println("The best month for " + modelType + " was: " + bestMonth);
         System.out.println("The worst month for " + modelType + " was: " + worstMonth);
         System.out.println();
+    }
+
+    private static void formatSalesByYearToPrint(List<SalesData> reportData) {
+        Map<String, String> groupedData = SalesDataService.groupSalesByYear(reportData);
+        // TODO: finish dis method
     }
 }
