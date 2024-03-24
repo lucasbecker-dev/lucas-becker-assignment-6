@@ -37,6 +37,7 @@ public class SalesDataService {
                 .stream()
                 .min(Comparator.comparingInt(SalesDataService::getSalesAsInteger));
         return worstMonthOpt.orElse(null);
+
     }
 
     public static String formatSalesData(List<SalesData> salesDataList) {
