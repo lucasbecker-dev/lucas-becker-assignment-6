@@ -40,12 +40,14 @@ public class SalesDataService {
 
     public static Map<String, String> groupSalesByYear(List<SalesData> salesDataList) {
         Map<String, String> salesGroupedByYear = new HashMap<>();
-        Set<Integer> years = salesDataList.stream().map(data -> SalesDataService.getDateAsYearMonth(data).getYear()).collect(Collectors.toCollection(LinkedHashSet<Integer>::new));
+        Set<Integer> years = salesDataList.stream()
+                                          .map(data -> SalesDataService.getDateAsYearMonth(data).getYear())
+                                          .collect(Collectors.toCollection(LinkedHashSet<Integer>::new));
 
         for (Integer year : years) {
             Integer sum = 0;
             for (SalesData salesData : salesDataList) {
-                Integer currentYear = (Integer) SalesDataService.getDateAsYearMonth(salesData).getYear();
+                Integer currentYear = SalesDataService.getDateAsYearMonth(salesData).getYear();
                 if (currentYear.equals(year)) {
                     sum += SalesDataService.getSalesAsInteger(salesData);
                 }
