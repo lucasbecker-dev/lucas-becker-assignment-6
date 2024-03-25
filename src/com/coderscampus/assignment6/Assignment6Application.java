@@ -12,7 +12,7 @@ public class Assignment6Application {
         List<SalesData> modelS = FileService.readFile("src/com/coderscampus/assignment6/modelS.csv");
         List<SalesData> modelX = FileService.readFile("src/com/coderscampus/assignment6/modelX.csv");
 
-        model3.stream().forEach(System.out::println);
+        SalesDataService.groupSalesByYear(model3);
 
 //        System.out.println(SalesDataService.groupSalesByYear(model3));
 
