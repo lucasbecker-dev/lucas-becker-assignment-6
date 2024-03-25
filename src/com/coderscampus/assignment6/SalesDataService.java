@@ -27,6 +27,18 @@ public class SalesDataService {
         }
     }
 
+    public static Optional<SalesData> findSalesDataBestMonth(List<SalesData> salesDataList) {
+        try {
+            return Optional.of(salesDataList
+                            .stream()
+                            .max(Comparator.comparingInt(SalesData::getSales)))
+                    .orElse(Optional.empty());
+        } catch (NullPointerException e) {
+            System.err.println(e.getMessage());
+            return Optional.empty();
+        }
+    }
+
 
 //    public static YearMonth getDateAsYearMonth(SalesData salesData) {
 //        String month = salesData.getDate().split("-")[0];
