@@ -1,27 +1,29 @@
 package com.coderscampus.assignment6;
 
-public class SalesData {
-    private String date;
-    private String sales;
+import java.time.YearMonth;
 
-    public SalesData(String date, String sales) {
+public class SalesData {
+    private YearMonth date;
+    private Integer sales;
+
+    public SalesData(YearMonth date, Integer sales) {
         this.date = date;
         this.sales = sales;
     }
 
-    public String getDate() {
+    public YearMonth getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(YearMonth date) {
         this.date = date;
     }
 
-    public String getSales() {
+    public Integer getSales() {
         return sales;
     }
 
-    public void setSales(String sales) {
+    public void setSales(Integer sales) {
         this.sales = sales;
     }
 
