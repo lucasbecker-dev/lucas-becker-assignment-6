@@ -19,25 +19,25 @@ public class ReportPrinterService {
         System.out.println();
     }
 
-    public static void printReport (ModelType modelType, List<SalesData> reportData) {
-        if (modelType == null || reportData == null) {
-            System.err.println("ReportPrinterService.printReport cannot accept null data.");
-            return;
-        }
-        YearMonth bestMonth = SalesDataService.getDateAsYearMonth(SalesDataService.findSalesDataBestMonth(reportData));
-        YearMonth worstMonth = SalesDataService.getDateAsYearMonth(SalesDataService.findSalesDataWorstMonth(reportData));
+//    public static void printReport (ModelType modelType, List<SalesData> reportData) {
+//        if (modelType == null || reportData == null) {
+//            System.err.println("ReportPrinterService.printReport cannot accept null data.");
+//            return;
+//        }
+//        YearMonth bestMonth = SalesDataService.getDateAsYearMonth(SalesDataService.findSalesDataBestMonth(reportData));
+//        YearMonth worstMonth = SalesDataService.getDateAsYearMonth(SalesDataService.findSalesDataWorstMonth(reportData));
+//
+//        System.out.println(modelType + " Yearly Sales Report");
+//        System.out.println("---------------------------");
+//        // TODO: print report data (implement function in SalesDataService first)
+//        System.out.println();
+//        System.out.println("The best month for " + modelType + " was: " + bestMonth);
+//        System.out.println("The worst month for " + modelType + " was: " + worstMonth);
+//        System.out.println();
+//    }
 
-        System.out.println(modelType + " Yearly Sales Report");
-        System.out.println("---------------------------");
-        // TODO: print report data (implement function in SalesDataService first)
-        System.out.println();
-        System.out.println("The best month for " + modelType + " was: " + bestMonth);
-        System.out.println("The worst month for " + modelType + " was: " + worstMonth);
-        System.out.println();
-    }
-
-    private static void formatSalesByYearToPrint(List<SalesData> reportData) {
-        Map<String, String> groupedData = SalesDataService.groupSalesByYear(reportData);
-        // TODO: finish dis method
-    }
+//    private static void formatSalesByYearToPrint(List<SalesData> reportData) {
+//        Map<String, String> groupedData = SalesDataService.groupSalesByYear(reportData);
+//        // TODO: finish dis method
+//    }
 }
