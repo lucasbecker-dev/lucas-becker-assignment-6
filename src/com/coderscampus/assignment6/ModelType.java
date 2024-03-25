@@ -7,7 +7,7 @@ public enum ModelType {
 
     @Override
     public String toString() throws IllegalArgumentException {
-        switch(this) {
+        switch (this) {
             case MODEL_3:
                 return "Model 3";
             case MODEL_S:
