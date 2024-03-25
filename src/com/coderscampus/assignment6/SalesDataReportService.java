@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
-public class ReportPrinterService {
+public class SalesDataReportService {
 
     public static void printReport(ModelType modelType, List<SalesData> reportData) {
         try {

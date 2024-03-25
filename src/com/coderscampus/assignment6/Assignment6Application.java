@@ -8,8 +8,8 @@ public class Assignment6Application {
         List<SalesData> modelS = FileService.readFile("src/com/coderscampus/assignment6/modelS.csv");
         List<SalesData> modelX = FileService.readFile("src/com/coderscampus/assignment6/modelX.csv");
 
-        ReportPrinterService.printReport(ModelType.MODEL_3, model3);
-        ReportPrinterService.printReport(ModelType.MODEL_S, modelS);
-        ReportPrinterService.printReport(ModelType.MODEL_X, modelX);
+        SalesDataReportService.printReport(ModelType.MODEL_3, model3);
+        SalesDataReportService.printReport(ModelType.MODEL_S, modelS);
+        SalesDataReportService.printReport(ModelType.MODEL_X, modelX);
     }
 }
