@@ -41,9 +41,8 @@ public class SalesDataService {
 
     public static Optional<SalesData> findSalesDataBestMonth(List<SalesData> salesDataList) {
         try {
-            return Optional.of(salesDataList
-                            .stream()
-                            .max(Comparator.comparingInt(SalesData::getSales)))
+            return Optional.of(salesDataList.stream()
+                    .max(Comparator.comparingInt(SalesData::getSales)))
                     .orElse(Optional.empty());
         } catch (NullPointerException e) {
             System.err.println(e.getMessage());
@@ -53,9 +52,8 @@ public class SalesDataService {
 
     public static Optional<SalesData> findSalesDataWorstMonth(List<SalesData> salesDataList) {
         try {
-            return Optional.of(salesDataList
-                            .stream()
-                            .min(Comparator.comparingInt(SalesData::getSales)))
+            return Optional.of(salesDataList.stream()
+                    .min(Comparator.comparingInt(SalesData::getSales)))
                     .orElse(Optional.empty());
         } catch (NullPointerException e) {
             System.err.println(e.getMessage());
@@ -65,8 +63,7 @@ public class SalesDataService {
 
     public static Optional<Map<Year, Integer>> groupSalesByYear(List<SalesData> salesDataList) {
         try {
-            Map<Year, Integer> salesPerYear = salesDataList
-                    .stream()
+            Map<Year, Integer> salesPerYear = salesDataList.stream()
                     .collect(Collectors.groupingBy(
                             salesData -> Year.of(salesData.getDate().getYear()),
                             Collectors.summingInt(SalesData::getSales)
