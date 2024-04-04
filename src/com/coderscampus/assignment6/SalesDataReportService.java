@@ -7,6 +7,11 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class SalesDataReportService {
+    public static void printReport(ModelType modelType, String filepath) {
+        List<SalesData> reportData = FileService.readFile(filepath);
+
+        SalesDataReportService.printReport(modelType, reportData);
+    }
 
     public static void printReport(ModelType modelType, List<SalesData> reportData) {
         try {
